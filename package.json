@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@duffel/api": "^2.3.4",
     "@headlessui/react": "^1.7.16",
     "@heroicons/react": "^2.0.18",
     "@types/node": "20.4.8",
