@@ -10,7 +10,18 @@ interface FlightInfoProps {
 
 const getFlightInfo = async (slices: FlightInfoProps) => {
   const offerID = await duffel.offerRequests.create({
-    slices,
+    slices: [
+      {
+        origin: "NYC",
+        destination: "ATL",
+        departure_date: "2023-08-12",
+      },
+      {
+        origin: "ATL",
+        destination: "NYC",
+        departure_date: "2023-08-20",
+      },
+    ],
     passengers: [{ type: "adult" }, { type: "adult" }, { age: 1 }],
     cabin_class: "economy",
     return_offers: false,
@@ -22,7 +33,6 @@ const getFlightInfo = async (slices: FlightInfoProps) => {
     limit: 1,
   });
 
-  console.log(flights.data);
 };
 
 export default getFlightInfo;
